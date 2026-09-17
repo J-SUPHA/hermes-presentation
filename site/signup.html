@@ -3,57 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stay in the loop — Hermes</title>
+<title>Get set up — Hermes</title>
 <style>
-  :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; }
+  :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --accent2:#22d3a7; }
   * { box-sizing:border-box; margin:0; }
   body { background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-         min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px; }
-  .card { width:100%; max-width:400px; background:var(--card); border:1px solid var(--border);
-          border-radius:20px; padding:36px 26px; text-align:center; }
-  h1 { font-size:1.4rem; margin-bottom:8px; }
-  p.sub { color:var(--muted); font-size:.9rem; line-height:1.5; margin-bottom:22px; }
+         min-height:100vh; display:flex; justify-content:center; padding:32px 16px 64px; }
+  main { width:100%; max-width:440px; }
+  .hero { text-align:center; margin-bottom:20px; }
+  h1 { font-size:1.45rem; margin-bottom:6px; }
+  .hero p { color:var(--muted); font-size:.9rem; line-height:1.5; }
+
+  .card { background:var(--card); border:1px solid var(--border); border-radius:18px;
+          padding:22px; margin-top:14px; }
+  h2 { font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+       margin-bottom:14px; font-weight:700; }
+
   form { display:flex; flex-direction:column; gap:10px; }
   input { padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--bg);
           color:var(--fg); font-size:1rem; outline:none; text-align:center; }
   input:focus { border-color:var(--accent); }
   button { padding:15px; border-radius:12px; border:none; background:var(--accent); color:#fff;
            font-size:1rem; font-weight:700; cursor:pointer; }
-  .fine { margin-top:14px; font-size:.72rem; color:var(--muted); }
-  #done { display:none; }
-  #done p { color:var(--muted); font-size:.9rem; margin-top:8px; line-height:1.6; }
-  #done a { color:var(--accent); font-weight:700; text-decoration:none; }
-  .shot { width:100%; border-radius:14px; border:1px solid var(--border); margin:14px 0 4px; }
-  .models { list-style:none; margin:12px 0 16px; }
-  .models li { padding:9px 0; border-bottom:1px solid var(--border); font-weight:600; font-size:.95rem; }
-  .models li:last-child { border-bottom:none; color:var(--accent2, #22d3a7); }
+  #signed { display:none; text-align:center; color:var(--accent2); font-weight:600; font-size:.95rem;
+            padding:10px 0 2px; }
+
+  .shot { width:100%; border-radius:14px; border:1px solid var(--border); margin-bottom:12px; }
+  .models { list-style:none; }
+  .models li { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+               padding:11px 0; border-bottom:1px solid var(--border); }
+  .models li:last-child { border-bottom:none; }
+  .models b { font-size:.95rem; }
+  .models span { color:var(--muted); font-size:.8rem; text-align:right; }
+  .models li.rec b { color:var(--accent2); }
+  .tag { font-size:.65rem; font-weight:800; color:var(--accent2); text-transform:uppercase; letter-spacing:.05em; }
+
+  .conn { display:flex; flex-wrap:wrap; gap:8px; }
+  .conn span { padding:8px 14px; border-radius:999px; border:1px solid var(--border);
+               background:var(--bg); font-size:.82rem; font-weight:600; }
+  p.note { margin-top:12px; color:var(--muted); font-size:.8rem; line-height:1.6; }
+  p.note a { color:var(--accent); font-weight:600; text-decoration:none; }
 </style>
 </head>
 <body>
-<div class="card">
-  <div id="form-view">
+<main>
+  <div class="hero">
     <h1>Stay in the loop</h1>
-    <p class="sub">Setup tips and a heads-up when new Hermes credit promos go live.</p>
+    <p>Onboarding tips for Hermes — which model to run, what you can connect, and first dibs on credit promos.</p>
+  </div>
+
+  <div class="card" id="form-card">
+    <h2>Get the tips by email</h2>
     <!-- Email capture via Formspree (form ID: mljdezrp). -->
     <form id="email-form" action="https://formspree.io/f/mljdezrp" method="POST">
       <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
       <input type="hidden" name="source" value="qr-signup">
       <button type="submit">Sign me up &rarr;</button>
     </form>
+    <div id="signed">You're on the list. Everything below works right now &darr;</div>
   </div>
-  <div id="done">
-    <h1>You're in</h1>
-    <p>Set up Hermes and pick one of these models:</p>
+
+  <div class="card">
+    <h2>Which model to pick</h2>
     <img class="shot" src="model-select.png" alt="Model selection list in Nous Portal">
     <ul class="models">
-      <li>Opus 5</li>
-      <li>GPT-5.6 Astra Pro</li>
-      <li>The recommended model</li>
+      <li class="rec"><b>Recommended model <span class="tag">start here</span></b><span>easiest first run</span></li>
+      <li><b>Opus 5</b><span>deep reasoning, long tasks</span></li>
+      <li><b>GPT-5.6 Astra Pro</b><span>fast, strong all-rounder</span></li>
     </ul>
-    <p>Then grab your promo code:<br>
-    <a href="promo.html">Get my promo code &rarr;</a></p>
   </div>
-</div>
+
+  <div class="card">
+    <h2>Connect it to your world</h2>
+    <div class="conn">
+      <span>Telegram</span><span>Discord</span><span>Slack</span><span>WhatsApp</span>
+      <span>Signal</span><span>Email</span><span>SMS</span><span>Microsoft Teams</span>
+      <span>Google Chat</span><span>Matrix</span><span>CLI</span><span>Desktop app</span>
+    </div>
+    <p class="note">One agent, one memory — talk to the same Hermes from every app. Set up connectors with <b>hermes gateway setup</b>. Then grab your <a href="promo.html">promo code &rarr;</a></p>
+  </div>
+</main>
 <script>
 const form = document.getElementById('email-form');
 form.addEventListener('submit', async (e) => {
@@ -61,8 +90,8 @@ form.addEventListener('submit', async (e) => {
   try {
     await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
   } catch (_) {}
-  document.getElementById('form-view').style.display = 'none';
-  document.getElementById('done').style.display = 'block';
+  form.style.display = 'none';
+  document.getElementById('signed').style.display = 'block';
 });
 </script>
 </body>
