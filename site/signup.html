@@ -23,6 +23,10 @@
   #done { display:none; }
   #done p { color:var(--muted); font-size:.9rem; margin-top:8px; line-height:1.6; }
   #done a { color:var(--accent); font-weight:700; text-decoration:none; }
+  .shot { width:100%; border-radius:14px; border:1px solid var(--border); margin:14px 0 4px; }
+  .models { list-style:none; margin:12px 0 16px; }
+  .models li { padding:9px 0; border-bottom:1px solid var(--border); font-weight:600; font-size:.95rem; }
+  .models li:last-child { border-bottom:none; color:var(--accent2, #22d3a7); }
 </style>
 </head>
 <body>
@@ -39,7 +43,14 @@
   </div>
   <div id="done">
     <h1>You're in</h1>
-    <p>Check your inbox &mdash; and grab your promo code next:<br><br>
+    <p>Set up Hermes and pick one of these models:</p>
+    <img class="shot" src="model-select.png" alt="Model selection list in Nous Portal">
+    <ul class="models">
+      <li>Opus 5</li>
+      <li>GPT-5.6 Astra Pro</li>
+      <li>The recommended model</li>
+    </ul>
+    <p>Then grab your promo code:<br>
     <a href="promo.html">Get my promo code &rarr;</a></p>
   </div>
 </div>
