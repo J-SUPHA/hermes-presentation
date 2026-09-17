@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Hermes Promo Code</title>
-<meta name="description" content="Sign up with your email to reveal your Hermes promo code.">
+<title>Step 2 — Sign Up &amp; Nous Portal</title>
+<meta name="description" content="Drop your email and set up your free Nous Portal account.">
 <style>
   :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --accent2:#22d3a7; }
   * { box-sizing:border-box; margin:0; }
@@ -12,22 +12,30 @@
 
   .slide { min-height:100vh; display:flex; flex-direction:column; align-items:center;
            justify-content:center; padding:48px 20px 96px; position:relative; }
-  .wrap { width:100%; max-width:520px; }
+  .wrap { width:100%; max-width:640px; }
   .pagenav { position:fixed; bottom:0; left:0; right:0; display:flex; justify-content:center;
              gap:10px; padding:14px; background:rgba(11,14,20,.9); backdrop-filter:blur(8px);
-             border-top:1px solid var(--border); z-index:10; }
-  .pagenav a { padding:9px 22px; border-radius:999px; border:1px solid var(--border);
-               color:var(--muted); text-decoration:none; font-size:.85rem; font-weight:600; }
+             border-top:1px solid var(--border); z-index:10; flex-wrap:wrap; }
+  .pagenav a { padding:9px 20px; border-radius:999px; border:1px solid var(--border);
+               color:var(--muted); text-decoration:none; font-size:.82rem; font-weight:600; }
   .pagenav a.active { border-color:var(--accent); color:var(--fg); background:rgba(124,92,255,.12); }
   .slideno { position:fixed; bottom:20px; right:20px; color:var(--muted); font-size:.75rem; z-index:10; }
 
   .hero { text-align:center; margin-bottom:26px; }
   .logo { font-size:2.6rem; }
-  h1 { font-size:1.6rem; margin:10px 0 6px; }
-  .hero p { color:var(--muted); font-size:.95rem; line-height:1.5; max-width:44ch; margin:0 auto; }
+  h1 { font-size:1.7rem; margin:10px 0 6px; }
+  .hero p { color:var(--muted); font-size:.95rem; line-height:1.5; max-width:46ch; margin:0 auto; }
 
   section { background:var(--card); border:1px solid var(--border); border-radius:18px;
-            padding:26px 24px; margin-top:18px; }
+            padding:24px 22px; margin-top:18px; }
+  h2 { font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+       margin-bottom:16px; font-weight:700; }
+
+  .qr-block { text-align:center; }
+  .qr-block img { width:210px; height:210px; background:#fff; border-radius:16px; padding:10px;
+                  box-shadow:0 8px 40px rgba(124,92,255,.25); }
+  .qr-block .cap { margin-top:12px; font-size:.92rem; font-weight:600; }
+  .qr-block .sub { font-size:.78rem; color:var(--muted); margin-top:2px; }
 
   form { display:flex; flex-direction:column; gap:10px; }
   input { padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--bg);
@@ -37,21 +45,24 @@
            font-size:1rem; font-weight:700; cursor:pointer; }
   button:active { transform:scale(.98); }
   .fine { margin-top:12px; font-size:.72rem; color:var(--muted); text-align:center; line-height:1.5; }
+  #email-done { display:none; padding:12px; border-radius:12px; background:rgba(34,211,167,.1);
+                border:1px solid var(--accent2); color:var(--accent2); font-size:.9rem;
+                font-weight:600; text-align:center; }
 
-  #promo { display:none; text-align:center; }
-  #promo .big { font-size:2.2rem; }
-  #promo h3 { margin:12px 0 6px; font-size:1.3rem; }
-  #promo .lede { color:var(--muted); font-size:.9rem; margin-bottom:20px; }
-  .code-box { display:flex; gap:12px; align-items:center; justify-content:center; background:var(--bg);
-              border:1px dashed var(--accent2); border-radius:14px; padding:20px; margin-bottom:16px; }
-  .code-box code { font-size:1.5rem; font-weight:800; letter-spacing:.1em; color:var(--accent2); }
-  .copy-btn { padding:10px 18px; border-radius:10px; border:1px solid var(--accent2); background:transparent;
-              color:var(--accent2); font-weight:700; font-size:.85rem; cursor:pointer; white-space:nowrap; }
-  .redeem { font-size:.84rem; color:var(--muted); line-height:1.7; text-align:left; }
-  .redeem b { color:var(--fg); }
-  .redeem code { background:var(--bg); border:1px solid var(--border); border-radius:6px;
-                 padding:1px 7px; font-size:.78rem; color:var(--accent2); }
-  .back { display:inline-block; margin-top:18px; color:var(--muted); font-size:.82rem; text-decoration:none; }
+  .guide { display:flex; gap:14px; padding:12px 0; border-bottom:1px solid var(--border); align-items:flex-start; }
+  .guide:last-of-type { border-bottom:none; }
+  .guide .n { min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
+              font-size:.78rem; font-weight:700; display:inline-flex; align-items:center;
+              justify-content:center; margin-top:2px; }
+  .guide .t b { display:block; font-size:.95rem; margin-bottom:3px; }
+  .guide .t span { font-size:.83rem; color:var(--muted); line-height:1.5; }
+  .guide .t code { background:var(--bg); border:1px solid var(--border); border-radius:6px;
+                   padding:1px 7px; font-size:.78rem; color:var(--accent2); }
+  .btn { display:inline-block; margin-top:8px; padding:9px 18px; border-radius:10px;
+         background:transparent; border:1px solid var(--border); color:var(--fg);
+         font-size:.85rem; font-weight:700; text-decoration:none; }
+  .next-cta { display:block; text-align:center; margin-top:22px; padding:16px; border-radius:14px;
+              background:var(--accent); color:#fff; font-weight:700; font-size:1.02rem; text-decoration:none; }
 </style>
 </head>
 <body>
@@ -59,51 +70,67 @@
 <div class="slide">
   <div class="wrap">
     <div class="hero">
-      <div class="logo">🎁</div>
-      <h1>Claim your promo code</h1>
-      <p>Enter your email and your Hermes promo code appears instantly.</p>
+      <div class="logo">✉️</div>
+      <h1>Sign up &amp; connect Nous Portal</h1>
+      <p>Scan the code to open this page on your phone — drop your email, then set up your free Portal account.</p>
     </div>
 
-    <section id="signup-section">
-      <!-- Email capture via Formspree (form ID: mljdezrp). Submissions land in your dashboard. -->
+    <section class="qr-block">
+      <img src="qr-signup.png" alt="QR code linking to this signup page">
+      <div class="cap">📷 Scan to open this signup page</div>
+      <div class="sub">Handy for phones — the email form is below</div>
+    </section>
+
+    <section id="email-section">
+      <h2>Drop your email</h2>
+      <!-- Email capture via Formspree (form ID: mljdezrp). -->
       <form id="email-form" action="https://formspree.io/f/mljdezrp" method="POST">
         <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
         <input type="hidden" name="source" value="promo-presentation">
-        <button type="submit">Reveal my promo code →</button>
+        <button type="submit">Sign me up →</button>
       </form>
-      <p class="fine">One email with setup tips + when new credit promos go live. No spam.</p>
+      <div id="email-done">✓ You're on the list — now set up Portal below ↓</div>
+      <p class="fine">Setup tips + a heads-up when new credit promos go live. No spam.</p>
     </section>
 
-    <section id="promo">
-      <div class="big">🎉</div>
-      <h3>You're in!</h3>
-      <p class="lede">Here's your promo code:</p>
+    <section>
+      <h2>Nous Portal setup</h2>
 
-      <!-- ═══════════════════════════════════════════════════════════
-           SET YOUR PROMO CODE HERE — change the text between the
-           <code> tags below (and nothing else) when the real code
-           is decided. E.g. <code id="promo-code">HERMES-FREE-25</code>
-           ═══════════════════════════════════════════════════════════ -->
-      <div class="code-box">
-        <code id="promo-code">PROMO-CODE-TBD</code>
-        <button class="copy-btn" id="copy-btn" type="button">Copy</button>
+      <div class="guide">
+        <span class="n">1</span>
+        <div class="t">
+          <b>Create your free Portal account</b>
+          <span>Portal unlocks free &amp; discounted models and bundled tool credits (web search, image gen, TTS, cloud browser). The free tier needs no card.</span><br>
+          <a class="btn" href="https://portal.nousresearch.com/">Create Portal account →</a>
+        </div>
       </div>
 
-      <div class="redeem">
-        <b>How to use it:</b><br>
-        1. Sign in at <b>portal.nousresearch.com</b><br>
-        2. Apply the code where credits are redeemed (billing / credits section)<br>
-        3. In Hermes, run <code>hermes setup --portal</code> to connect — credits apply to models &amp; tools automatically
+      <div class="guide">
+        <span class="n">2</span>
+        <div class="t">
+          <b>Connect Hermes to Portal</b>
+          <span>In the Hermes app or terminal, run <code>hermes setup --portal</code> — one OAuth login sets your model and turns on all the hosted tools at once.</span>
+        </div>
       </div>
-      <a class="back" href="index.html">← Back to setup guide</a>
+
+      <div class="guide">
+        <span class="n">3</span>
+        <div class="t">
+          <b>Verify it worked</b>
+          <span>Run <code>hermes portal info</code> — you should see your account and what's connected.</span>
+        </div>
+      </div>
     </section>
+
+    <a class="next-cta" href="page3.html">Next: claim your promo code →</a>
   </div>
-  <div class="slideno">2 / 2</div>
+  <div class="slideno">2 / 3</div>
 </div>
 
 <div class="pagenav">
-  <a href="index.html">1 · Download &amp; Setup</a>
-  <a href="page2.html" class="active">2 · Get Promo Code</a>
+  <a href="index.html">1 · Download</a>
+  <a href="page2.html" class="active">2 · Portal Signup</a>
+  <a href="page3.html">3 · Promo Code</a>
 </div>
 
 <script>
@@ -116,21 +143,9 @@ form.addEventListener('submit', async (e) => {
       headers: { 'Accept': 'application/json' },
       body: new FormData(form)
     });
-  } catch (_) { /* reveal anyway — the email was the gate, don't punish network hiccups */ }
-  document.getElementById('signup-section').style.display = 'none';
-  const promo = document.getElementById('promo');
-  promo.style.display = 'block';
-  promo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-});
-
-document.getElementById('copy-btn').addEventListener('click', async (e) => {
-  const code = document.getElementById('promo-code').textContent.trim();
-  try {
-    await navigator.clipboard.writeText(code);
-    e.target.textContent = 'Copied ✓';
-  } catch {
-    e.target.textContent = code; // fallback: show it plainly
-  }
+  } catch (_) { /* still show confirmation */ }
+  form.style.display = 'none';
+  document.getElementById('email-done').style.display = 'block';
 });
 </script>
 
