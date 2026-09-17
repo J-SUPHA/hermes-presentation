@@ -17,7 +17,10 @@
           padding:22px; margin-bottom:14px; }
   h2 { font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
        margin-bottom:14px; font-weight:700; }
-  .shot { width:100%; border-radius:12px; border:1px solid var(--border); }
+  .shot { width:100%; border-radius:12px; border:1px solid var(--border); display:block; }
+  .shot + .shot { margin-top:12px; }
+  .cap { color:var(--muted); font-size:.8rem; margin:8px 0 4px; line-height:1.5; }
+  .cap b { color:var(--accent2); }
   .conn { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:16px; }
   .conn span { padding:10px 20px; border-radius:999px; border:1px solid var(--border);
                background:var(--bg); font-size:.9rem; font-weight:600; }
@@ -29,7 +32,7 @@
   .prompt i { color:var(--muted); }
   .nav { position:fixed; bottom:0; left:0; right:0; display:flex; justify-content:center; gap:8px;
          padding:12px; background:rgba(11,14,20,.9); border-top:1px solid var(--border); flex-wrap:wrap; }
-  .nav a { padding:7px 16px; border-radius:999px; border:1px solid var(--border); color:var(--muted);
+  .nav a { padding:7px 14px; border-radius:999px; border:1px solid var(--border); color:var(--muted);
            text-decoration:none; font-size:.78rem; font-weight:600; }
   .nav a.active { border-color:var(--accent); color:var(--fg); background:rgba(124,92,255,.12); }
 </style>
@@ -40,8 +43,15 @@
     <p class="sub">The last step before Hermes is working for you</p>
 
     <div class="card">
-      <h2>Which model to pick</h2>
-      <img class="shot" src="site/model-select.png" alt="Model selection list in Nous Portal">
+      <h2>Where the model selector lives</h2>
+      <img class="shot" src="site/model-selector-ui.png" alt="Hermes Agent with the model selector open">
+      <p class="cap">The dropdown at the bottom of the chat — click the current model name to open it.</p>
+    </div>
+
+    <div class="card">
+      <h2>What we recommend</h2>
+      <img class="shot" src="site/model-select.png" alt="Model list in Nous Portal">
+      <p class="cap">Our pick: <b>Opus 5</b> — deep reasoning for long tasks. Fast alternative: <b>GPT-5.6 Astra Pro</b>.</p>
     </div>
 
     <div class="card">
@@ -64,6 +74,7 @@
     <a href="page3.html">3 · Early Access</a>
     <a href="page4.html">4 · Promo Code</a>
     <a href="page5.html" class="active">5 · Setup</a>
+    <a href="page6.html">6 · Use Cases</a>
   </div>
 </body>
 </html>

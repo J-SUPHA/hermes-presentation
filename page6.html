@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6 — What People Actually Use It For</title>
+<style>
+  :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --accent2:#22d3a7; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+         min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+         padding:40px 20px 90px; }
+  .wrap { width:100%; max-width:640px; }
+  h1 { font-size:2rem; text-align:center; }
+  p.sub { color:var(--muted); text-align:center; margin:6px 0 26px; }
+  .item { display:flex; gap:16px; background:var(--card); border:1px solid var(--border);
+          border-radius:16px; padding:20px; margin-bottom:12px; align-items:flex-start; }
+  .emoji { font-size:1.6rem; line-height:1; margin-top:2px; }
+  .item b { display:block; font-size:1rem; margin-bottom:4px; color:var(--accent); }
+  .item span { color:var(--muted); font-size:.87rem; line-height:1.55; }
+  .item span i { color:var(--fg); }
+  .nav { position:fixed; bottom:0; left:0; right:0; display:flex; justify-content:center; gap:8px;
+         padding:12px; background:rgba(11,14,20,.9); border-top:1px solid var(--border); flex-wrap:wrap; }
+  .nav a { padding:7px 14px; border-radius:999px; border:1px solid var(--border); color:var(--muted);
+           text-decoration:none; font-size:.78rem; font-weight:600; }
+  .nav a.active { border-color:var(--accent); color:var(--fg); background:rgba(124,92,255,.12); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>What people actually use it for</h1>
+    <p class="sub">Real prompts, real results</p>
+
+    <div class="item"><span class="emoji">🌅</span><div>
+      <b>The 7am briefing</b>
+      <span><i>"Every weekday at 7am, check my calendar and inbox, summarize today's meetings, flag anything urgent, and send it to my Telegram before I wake up."</i> You wake up already briefed.</span></div></div>
+
+    <div class="item"><span class="emoji">✈️</span><div>
+      <b>The deal hunter</b>
+      <span><i>"Check flights to Tokyo every 6 hours. The moment anything drops under $800, text me."</i> Works for concert tickets, GPU prices, apartment listings — anything that sells out.</span></div></div>
+
+    <div class="item"><span class="emoji">🧹</span><div>
+      <b>The Sunday cleaner</b>
+      <span><i>"Every Sunday night, organize my Downloads folder, rename screenshots by date, and back everything up to the cloud."</i> Set once, runs forever.</span></div></div>
+
+    <div class="item"><span class="emoji">📚</span><div>
+      <b>The overnight researcher</b>
+      <span><i>"Read these five papers and have a comparison table with citations ready by morning."</i> It searches, reads, and keeps notes in memory — next week it still knows what it learned.</span></div></div>
+
+    <div class="item"><span class="emoji">💬</span><div>
+      <b>The teammate in your group chat</b>
+      <span>Add it to your team's Discord or Slack. It answers with context from your docs — and remembers that decision the team made three months ago that nobody wrote down.</span></div></div>
+
+    <div class="item"><span class="emoji">📝</span><div>
+      <b>The meeting translator</b>
+      <span>Paste messy meeting notes; get decisions, owners, and deadlines — then watch it file the tickets in Linear or GitHub Issues itself. No follow-up email ever gets written again.</span></div></div>
+  </div>
+  <div class="nav">
+    <a href="index.html">1 · Download</a>
+    <a href="page2.html">2 · Portal</a>
+    <a href="page3.html">3 · Early Access</a>
+    <a href="page4.html">4 · Promo Code</a>
+    <a href="page5.html">5 · Setup</a>
+    <a href="page6.html" class="active">6 · Use Cases</a>
+  </div>
+</body>
+</html>
