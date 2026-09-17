@@ -3,37 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Hermes Promo Code</title>
+<title>Your Hermes Promo Code — How to Redeem</title>
 <style>
-  :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent2:#22d3a7; }
+  :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent2:#22d3a7; --accent:#7c5cff; }
   * { box-sizing:border-box; margin:0; }
   body { background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-         min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px; }
-  .card { width:100%; max-width:400px; background:var(--card); border:1px solid var(--border);
-          border-radius:20px; padding:36px 26px; text-align:center; }
-  h1 { font-size:1.4rem; margin-bottom:18px; }
-  .code-box { display:flex; gap:10px; align-items:center; justify-content:center; background:var(--bg);
-              border:1px dashed var(--accent2); border-radius:14px; padding:20px; margin-bottom:16px; }
-  .code-box code { font-size:1.35rem; font-weight:800; letter-spacing:.08em; color:var(--accent2); }
-  .copy-btn { padding:10px 16px; border-radius:10px; border:1px solid var(--accent2); background:transparent;
-              color:var(--accent2); font-weight:700; font-size:.82rem; cursor:pointer; white-space:nowrap; }
-  p.how { color:var(--muted); font-size:.85rem; line-height:1.7; }
-  p.how a { color:var(--accent2); font-weight:600; text-decoration:none; }
+         min-height:100vh; display:flex; justify-content:center; padding:32px 16px 64px; }
+  main { width:100%; max-width:480px; }
+  .hero { text-align:center; margin-bottom:22px; }
+  h1 { font-size:1.5rem; margin-bottom:6px; }
+  .hero p { color:var(--muted); font-size:.9rem; line-height:1.5; }
+
+  .code-box { display:flex; gap:12px; align-items:center; justify-content:center; background:var(--card);
+              border:1px dashed var(--accent2); border-radius:16px; padding:20px; margin-bottom:20px; }
+  .code-box code { font-size:1.6rem; font-weight:800; letter-spacing:.1em; color:var(--accent2); }
+  .copy-btn { padding:10px 18px; border-radius:10px; border:1px solid var(--accent2); background:transparent;
+              color:var(--accent2); font-weight:700; font-size:.85rem; cursor:pointer; white-space:nowrap; }
+
+  h2 { font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+       margin:24px 0 12px; font-weight:700; }
+
+  .step { background:var(--card); border:1px solid var(--border); border-radius:16px;
+          padding:18px; margin-bottom:14px; }
+  .step .head { display:flex; gap:12px; align-items:baseline; margin-bottom:10px; }
+  .n { min-width:24px; height:24px; border-radius:50%; background:var(--accent2); color:#0b0e14;
+       font-size:.78rem; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
+  .head b { font-size:1rem; }
+  .step p { color:var(--muted); font-size:.86rem; line-height:1.6; margin-bottom:12px; }
+  .step p b { color:var(--fg); }
+  .shot { width:100%; border-radius:10px; border:1px solid var(--border); display:block; }
+  a.link { color:var(--accent2); font-weight:600; text-decoration:none; }
 </style>
 </head>
 <body>
-<div class="card">
-  <h1>Your promo code</h1>
+<main>
+  <div class="hero">
+    <h1>Your promo code</h1>
+    <p>Copy it now — you'll paste it at checkout. Steps below.</p>
+  </div>
 
-  <!-- Promo code -->
   <div class="code-box">
     <code id="promo-code">CHFW8KTT</code>
     <button class="copy-btn" id="copy-btn" type="button">Copy</button>
   </div>
 
-  <p class="how">Redeem it in <a href="https://portal.nousresearch.com/">Nous Portal</a> under billing / credits.<br>
-  Then in Hermes, run <b>hermes setup --portal</b>.</p>
-</div>
+  <h2>How to use it — 3 steps</h2>
+
+  <div class="step">
+    <div class="head"><span class="n">1</span><b>Go to the Top Up page</b></div>
+    <p>Sign in at <a class="link" href="https://portal.nousresearch.com/">portal.nousresearch.com</a>, then open <b>Top Up</b> in the left sidebar.</p>
+  </div>
+
+  <div class="step">
+    <div class="head"><span class="n">2</span><b>Add $50 and pay with Stripe</b></div>
+    <p>Select <b>+ $50</b>, then hit <b>Pay with Stripe</b>.</p>
+    <img class="shot" src="step1-topup.png" alt="Nous Portal Top Up page with $50 selected and the Pay with Stripe button">
+  </div>
+
+  <div class="step">
+    <div class="head"><span class="n">3</span><b>Enter the code at checkout</b></div>
+    <p>On the Stripe screen, tap <b>Add promotion code</b>, paste <b>CHFW8KTT</b>, and the discount applies before you pay.</p>
+    <img class="shot" src="step2-stripe.png" alt="Stripe checkout for Nous Research showing the Add promotion code field">
+  </div>
+</main>
 <script>
 document.getElementById('copy-btn').addEventListener('click', async (e) => {
   const code = document.getElementById('promo-code').textContent.trim();
