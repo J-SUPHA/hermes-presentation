@@ -3,110 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Step 1 — Download Hermes Desktop</title>
-<meta name="description" content="Scan to download Hermes Desktop — free for Mac, Windows and Linux.">
+<title>1 — Download Hermes Desktop</title>
 <style>
-  :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --accent2:#22d3a7; }
+  :root { --bg:#0b0e14; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --border:#232b3d; }
   * { box-sizing:border-box; margin:0; }
-  body { background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
-
-  .slide { min-height:100vh; display:flex; flex-direction:column; align-items:center;
-           justify-content:center; padding:48px 20px 96px; position:relative; }
-  .wrap { width:100%; max-width:640px; }
-  .pagenav { position:fixed; bottom:0; left:0; right:0; display:flex; justify-content:center;
-             gap:10px; padding:14px; background:rgba(11,14,20,.9); backdrop-filter:blur(8px);
-             border-top:1px solid var(--border); z-index:10; flex-wrap:wrap; }
-  .pagenav a { padding:9px 20px; border-radius:999px; border:1px solid var(--border);
-               color:var(--muted); text-decoration:none; font-size:.82rem; font-weight:600; }
-  .pagenav a.active { border-color:var(--accent); color:var(--fg); background:rgba(124,92,255,.12); }
-  .slideno { position:fixed; bottom:20px; right:20px; color:var(--muted); font-size:.75rem; z-index:10; }
-
-  .hero { text-align:center; margin-bottom:26px; }
-  .logo { font-size:2.6rem; }
-  h1 { font-size:1.7rem; margin:10px 0 6px; }
-  .hero p { color:var(--muted); font-size:.95rem; line-height:1.5; max-width:46ch; margin:0 auto; }
-
-  section { background:var(--card); border:1px solid var(--border); border-radius:18px;
-            padding:24px 22px; margin-top:18px; }
-  h2 { font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
-       margin-bottom:16px; font-weight:700; }
-
-  .qr-block { text-align:center; }
-  .qr-block img { width:240px; height:240px; background:#fff; border-radius:16px; padding:10px;
-                  box-shadow:0 8px 40px rgba(124,92,255,.25); }
-  .qr-block .cap { margin-top:12px; font-size:.92rem; font-weight:600; }
-  .qr-block .sub { font-size:.78rem; color:var(--muted); margin-top:2px; }
-
-  .guide { display:flex; gap:14px; padding:12px 0; border-bottom:1px solid var(--border); align-items:flex-start; }
-  .guide:last-of-type { border-bottom:none; }
-  .guide .n { min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
-              font-size:.78rem; font-weight:700; display:inline-flex; align-items:center;
-              justify-content:center; margin-top:2px; }
-  .guide .t b { display:block; font-size:.95rem; margin-bottom:3px; }
-  .guide .t span { font-size:.83rem; color:var(--muted); line-height:1.5; }
-  .guide .t code { background:var(--bg); border:1px solid var(--border); border-radius:6px;
-                   padding:1px 7px; font-size:.78rem; color:var(--accent2); }
-  .btn { display:inline-block; margin-top:8px; padding:9px 18px; border-radius:10px;
-         background:var(--accent); color:#fff; font-size:.85rem; font-weight:700; text-decoration:none; }
-  .next-cta { display:block; text-align:center; margin-top:22px; padding:16px; border-radius:14px;
-              background:var(--accent); color:#fff; font-weight:700; font-size:1.02rem; text-decoration:none; }
+  body { background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+         min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+         text-align:center; padding:32px 16px 80px; }
+  h1 { font-size:2rem; margin-bottom:6px; }
+  p.sub { color:var(--muted); margin-bottom:28px; }
+  img { width:min(46vh, 340px); height:auto; background:#fff; border-radius:20px; padding:14px;
+        box-shadow:0 10px 50px rgba(124,92,255,.3); }
+  p.scan { margin-top:20px; font-weight:600; }
+  .nav { position:fixed; bottom:0; left:0; right:0; display:flex; justify-content:center; gap:8px;
+         padding:12px; background:rgba(11,14,20,.9); border-top:1px solid var(--border); flex-wrap:wrap; }
+  .nav a { padding:7px 16px; border-radius:999px; border:1px solid var(--border); color:var(--muted);
+           text-decoration:none; font-size:.78rem; font-weight:600; }
+  .nav a.active { border-color:var(--accent); color:var(--fg); background:rgba(124,92,255,.12); }
 </style>
 </head>
 <body>
-
-<div class="slide">
-  <div class="wrap">
-    <div class="hero">
-      <div class="logo">⚡</div>
-      <h1>Download Hermes Desktop</h1>
-      <p>Scan the code with your phone camera — it opens the official Hermes Desktop page with installers for every platform.</p>
-    </div>
-
-    <section class="qr-block">
-      <img src="qr-desktop.png" alt="QR code linking to the Hermes Desktop download page">
-      <div class="cap">📷 Scan to download</div>
-      <div class="sub">hermes-agent.nousresearch.com/desktop — free for Mac, Windows &amp; Linux</div>
-    </section>
-
-    <section>
-      <h2>Hermes setup guide</h2>
-
-      <div class="guide">
-        <span class="n">1</span>
-        <div class="t">
-          <b>Download the installer for your OS</b>
-          <span>Scan the code above (or click below). macOS 12+ (Apple Silicon) and Windows 10/11 have one-click installers; Linux installs via terminal. Free &amp; open source (MIT) — no account needed for the base app.</span><br>
-          <a class="btn" href="https://hermes-agent.nousresearch.com/desktop">Open download page →</a>
-        </div>
-      </div>
-
-      <div class="guide">
-        <span class="n">2</span>
-        <div class="t">
-          <b>Run the installer</b>
-          <span>It sets up the desktop app <em>and</em> the CLI together — all dependencies handled automatically.</span>
-        </div>
-      </div>
-
-      <div class="guide">
-        <span class="n">3</span>
-        <div class="t">
-          <b>Start Hermes</b>
-          <span>Open the app, or run <code>hermes</code> in a terminal. It remembers you across sessions and gets better the more you use it.</span>
-        </div>
-      </div>
-    </section>
-
-    <a class="next-cta" href="page2.html">Next: set up Nous Portal →</a>
+  <h1>⚡ Download Hermes Desktop</h1>
+  <p class="sub">Free for Mac, Windows &amp; Linux</p>
+  <img src="qr-1-download.png" alt="QR code — Hermes Desktop download page">
+  <p class="scan">📷 Point your phone camera at the code</p>
+  <div class="nav">
+    <a href="index.html" class="active">1 · Download</a>
+    <a href="page2.html">2 · Sign Up</a>
+    <a href="page3.html">3 · Promo Code</a>
+    <a href="page4.html">4 · Setup Guide</a>
   </div>
-  <div class="slideno">1 / 3</div>
-</div>
-
-<div class="pagenav">
-  <a href="index.html" class="active">1 · Download</a>
-  <a href="page2.html">2 · Portal Signup</a>
-  <a href="page3.html">3 · Promo Code</a>
-</div>
-
 </body>
 </html>

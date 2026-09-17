@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stay in the loop — Hermes</title>
+<style>
+  :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+         min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px; }
+  .card { width:100%; max-width:400px; background:var(--card); border:1px solid var(--border);
+          border-radius:20px; padding:36px 26px; text-align:center; }
+  .icon { font-size:2.4rem; }
+  h1 { font-size:1.4rem; margin:12px 0 8px; }
+  p.sub { color:var(--muted); font-size:.9rem; line-height:1.5; margin-bottom:22px; }
+  form { display:flex; flex-direction:column; gap:10px; }
+  input { padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--bg);
+          color:var(--fg); font-size:1rem; outline:none; text-align:center; }
+  input:focus { border-color:var(--accent); }
+  button { padding:15px; border-radius:12px; border:none; background:var(--accent); color:#fff;
+           font-size:1rem; font-weight:700; cursor:pointer; }
+  .fine { margin-top:14px; font-size:.72rem; color:var(--muted); }
+  #done { display:none; }
+  #done .big { font-size:2rem; }
+  #done p { color:var(--muted); font-size:.9rem; margin-top:8px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="form-view">
+    <div class="icon">✉️</div>
+    <h1>Stay in the loop</h1>
+    <p class="sub">Setup tips and a heads-up when new Hermes credit promos go live. No spam, ever.</p>
+    <!-- Email capture via Formspree (form ID: mljdezrp). -->
+    <form id="email-form" action="https://formspree.io/f/mljdezrp" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <input type="hidden" name="source" value="qr-signup">
+      <button type="submit">Sign me up →</button>
+    </form>
+    <p class="fine">One or two emails a month, tops.</p>
+  </div>
+  <div id="done">
+    <div class="big">✅</div>
+    <h1>You're in</h1>
+    <p>Check your inbox — and grab your promo code next:<br><br>
+    <a href="promo.html" style="color:var(--accent); font-weight:700;">Get my promo code →</a></p>
+  </div>
+</div>
+<script>
+const form = document.getElementById('email-form');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  try {
+    await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
+  } catch (_) {}
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('done').style.display = 'block';
+});
+</script>
+</body>
+</html>
