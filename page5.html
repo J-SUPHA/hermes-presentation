@@ -3,21 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5 — What You Can Do With Hermes</title>
+<title>5 — Models &amp; Connectors</title>
 <style>
-  :root { --bg:#0b0e14; --card:#131826; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --accent2:#22d3a7; --border:#232b3d; }
+  :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --accent2:#22d3a7; }
   * { box-sizing:border-box; margin:0; }
   body { background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
          min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
          padding:40px 20px 90px; }
-  .wrap { width:100%; max-width:620px; }
+  .wrap { width:100%; max-width:560px; }
   h1 { font-size:2rem; text-align:center; }
   p.sub { color:var(--muted); text-align:center; margin:6px 0 26px; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  @media (max-width:560px) { .grid { grid-template-columns:1fr; } }
-  .item { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px; }
-  .item b { display:block; font-size:1rem; margin-bottom:4px; color:var(--accent); }
-  .item span { color:var(--muted); font-size:.86rem; line-height:1.5; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:16px;
+          padding:22px; margin-bottom:14px; }
+  h2 { font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+       margin-bottom:14px; font-weight:700; }
+  .shot { width:100%; border-radius:12px; border:1px solid var(--border); }
+  .conn { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:16px; }
+  .conn span { padding:10px 20px; border-radius:999px; border:1px solid var(--border);
+               background:var(--bg); font-size:.9rem; font-weight:600; }
+  .how { border-top:1px solid var(--border); padding-top:14px; }
+  .how p { color:var(--muted); font-size:.84rem; line-height:1.6; margin-bottom:10px; }
+  .how p b { color:var(--fg); }
+  .prompt { background:var(--bg); border:1px solid var(--border); border-radius:10px;
+            padding:12px 14px; font-size:.82rem; color:var(--fg); margin-bottom:10px; line-height:1.5; }
+  .prompt i { color:var(--muted); }
   .nav { position:fixed; bottom:0; left:0; right:0; display:flex; justify-content:center; gap:8px;
          padding:12px; background:rgba(11,14,20,.9); border-top:1px solid var(--border); flex-wrap:wrap; }
   .nav a { padding:7px 16px; border-radius:999px; border:1px solid var(--border); color:var(--muted);
@@ -27,29 +36,34 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>What you can do with Hermes</h1>
-    <p class="sub">The agent that grows with you</p>
-    <div class="grid">
-      <div class="item"><b>Morning briefing on your phone</b>
-        <span>"Every weekday at 7am, check my calendar and email, summarize the day's meetings, and text it to my Telegram before I wake up."</span></div>
-      <div class="item"><b>Watches things for you</b>
-        <span>"Check flight prices to Tokyo every 6 hours and ping me the moment they drop below $800." Works for product prices, GitHub issues, competitor news — anything.</span></div>
-      <div class="item"><b>Meeting notes → action items</b>
-        <span>Paste raw meeting notes, get a clean list of decisions, owners, and deadlines — and have it file the tickets in Linear or GitHub Issues itself.</span></div>
-      <div class="item"><b>Researches while you sleep</b>
-        <span>"Read these 5 papers and have a comparison table ready by morning." It searches, reads, takes notes in its own memory, and builds on them next session.</span></div>
-      <div class="item"><b>Lives in your group chat</b>
-        <span>Add it to a Discord or Slack channel — it answers questions with full context of your docs, and remembers what the team decided last month.</span></div>
-      <div class="item"><b>Automates the boring parts</b>
-        <span>"Rename these 200 photos by date, organize my Downloads folder, and back it all up to the cloud every Sunday night." Done, and scheduled forever.</span></div>
+    <h1>Pick a model, connect your apps</h1>
+    <p class="sub">The last step before Hermes is working for you</p>
+
+    <div class="card">
+      <h2>Which model to pick</h2>
+      <img class="shot" src="site/model-select.png" alt="Model selection list in Nous Portal">
+    </div>
+
+    <div class="card">
+      <h2>Connect it to your world</h2>
+      <div class="conn">
+        <span>Google Chat</span><span>Telegram</span><span>Discord</span>
+        <span>Slack</span><span>WhatsApp</span>
+      </div>
+      <div class="how">
+        <p><b>To connect any of these, just ask Hermes:</b></p>
+        <div class="prompt"><i>"Connect yourself to my Telegram — walk me through it."</i></div>
+        <div class="prompt"><i>"Set up a Discord bot for this agent and add it to my server."</i></div>
+        <div class="prompt"><i>"I want to text you on WhatsApp. What do I need to do?"</i></div>
+      </div>
     </div>
   </div>
   <div class="nav">
     <a href="index.html">1 · Download</a>
-    <a href="page2.html">2 · Sign Up</a>
-    <a href="page3.html">3 · Promo Code</a>
-    <a href="page4.html">4 · Setup Guide</a>
-    <a href="page5.html" class="active">5 · What It Can Do</a>
+    <a href="page2.html">2 · Portal</a>
+    <a href="page3.html">3 · Early Access</a>
+    <a href="page4.html">4 · Promo Code</a>
+    <a href="page5.html" class="active">5 · Setup</a>
   </div>
 </body>
 </html>

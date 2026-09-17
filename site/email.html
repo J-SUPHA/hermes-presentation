@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early Access — Hermes</title>
+<style>
+  :root { --bg:#0b0e14; --card:#131826; --border:#232b3d; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --accent2:#22d3a7; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+         min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px; }
+  .card { width:100%; max-width:400px; background:var(--card); border:1px solid var(--border);
+          border-radius:20px; padding:36px 26px; text-align:center; }
+  h1 { font-size:1.4rem; margin-bottom:8px; }
+  p.sub { color:var(--muted); font-size:.9rem; line-height:1.5; margin-bottom:22px; }
+  form { display:flex; flex-direction:column; gap:10px; }
+  input { padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--bg);
+          color:var(--fg); font-size:1rem; outline:none; text-align:center; }
+  input:focus { border-color:var(--accent); }
+  button { padding:15px; border-radius:12px; border:none; background:var(--accent); color:#fff;
+           font-size:1rem; font-weight:700; cursor:pointer; }
+  #done { display:none; }
+  #done p { color:var(--muted); font-size:.9rem; margin-top:8px; line-height:1.6; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="form-view">
+    <h1>Get early access</h1>
+    <p class="sub">Drop your email and we'll turn on new features for your account as they roll out.</p>
+    <!-- Email capture via Formspree (form ID: mljdezrp). -->
+    <form id="email-form" action="https://formspree.io/f/mljdezrp" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <input type="hidden" name="source" value="feature-flag">
+      <button type="submit">Notify me &rarr;</button>
+    </form>
+  </div>
+  <div id="done">
+    <h1>You're on the list</h1>
+    <p>We'll email you when your feature flags turn on.</p>
+  </div>
+</div>
+<script>
+const form = document.getElementById('email-form');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  try {
+    await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
+  } catch (_) {}
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('done').style.display = 'block';
+});
+</script>
+</body>
+</html>
