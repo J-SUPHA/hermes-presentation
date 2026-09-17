@@ -5,16 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>4 — Setup Guide</title>
 <style>
-  :root { --bg:#0b0e14; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --border:#232b3d; }
+  :root { --bg:#0b0e14; --card:#131826; --fg:#e6e9f0; --muted:#8b93a7; --accent:#7c5cff; --accent2:#22d3a7; --border:#232b3d; }
   * { box-sizing:border-box; margin:0; }
   body { background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
          min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
-         text-align:center; padding:32px 16px 80px; }
-  h1 { font-size:2rem; margin-bottom:6px; }
-  p.sub { color:var(--muted); margin-bottom:28px; }
-  img { width:min(46vh, 340px); height:auto; background:#fff; border-radius:20px; padding:14px;
-        box-shadow:0 10px 50px rgba(124,92,255,.3); }
-  p.scan { margin-top:20px; font-weight:600; }
+         padding:40px 20px 90px; }
+  .wrap { width:100%; max-width:560px; }
+  h1 { font-size:2rem; text-align:center; }
+  p.sub { color:var(--muted); text-align:center; margin:6px 0 26px; }
+  ol { list-style:none; }
+  li { display:flex; gap:16px; background:var(--card); border:1px solid var(--border); border-radius:14px;
+       padding:18px 20px; margin-bottom:12px; align-items:baseline; }
+  .n { min-width:26px; font-weight:800; color:var(--accent); font-size:1.05rem; }
+  li b { display:block; font-size:1rem; margin-bottom:3px; }
+  li span { color:var(--muted); font-size:.88rem; line-height:1.55; }
+  code { background:var(--bg); border:1px solid var(--border); border-radius:6px;
+         padding:1px 7px; font-size:.8rem; color:var(--accent2); }
+  a { color:var(--accent); text-decoration:none; font-weight:600; }
   .nav { position:fixed; bottom:0; left:0; right:0; display:flex; justify-content:center; gap:8px;
          padding:12px; background:rgba(11,14,20,.9); border-top:1px solid var(--border); flex-wrap:wrap; }
   .nav a { padding:7px 16px; border-radius:999px; border:1px solid var(--border); color:var(--muted);
@@ -23,10 +30,20 @@
 </style>
 </head>
 <body>
-  <h1>🛠 Set up Hermes Desktop</h1>
-  <p class="sub">Scan for the step-by-step guide</p>
-  <img src="qr-4-setup.png" alt="QR code — Hermes Desktop setup guide">
-  <p class="scan">📷 Point your phone camera at the code</p>
+  <div class="wrap">
+    <h1>Set up Hermes Desktop</h1>
+    <p class="sub">Five minutes, start to finish</p>
+    <ol>
+      <li><span class="n">1</span><div><b>Download &amp; install</b>
+        <span>Get the installer for your OS from the <a href="https://hermes-agent.nousresearch.com/desktop">Hermes Desktop page</a>. It sets up the app and CLI together.</span></div></li>
+      <li><span class="n">2</span><div><b>Open Hermes</b>
+        <span>Launch the desktop app, or run <code>hermes</code> in a terminal — same agent either way.</span></div></li>
+      <li><span class="n">3</span><div><b>Connect Nous Portal</b>
+        <span>Run <code>hermes setup --portal</code> — one login gives you a model plus web search, image generation, TTS and browser tools. Free tier, no card.</span></div></li>
+      <li><span class="n">4</span><div><b>Start chatting</b>
+        <span>Hermes remembers you across sessions and learns how you work. Full docs at <a href="https://hermes-agent.nousresearch.com/docs">hermes-agent.nousresearch.com/docs</a>.</span></div></li>
+    </ol>
+  </div>
   <div class="nav">
     <a href="index.html">1 · Download</a>
     <a href="page2.html">2 · Sign Up</a>
